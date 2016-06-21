@@ -1,20 +1,35 @@
-section.templates .video-wrapper {
-    position: fixed;
-    z-index: -1
-}
-
-.video-bg,.video-wrapper,video {
-    position: absolute;
-    top: 0;
-    width: 100%
+.video-wrapper,video {
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 
 .video-wrapper {
-    height: 100%;
-    z-index: 0;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden
+}
+
+
+video{
+    opacity: 0.6;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    left: 0;
+    max-width: none;
+    object-fit: cover;
+}
+
+section {
     overflow: hidden
 }
 
-.tablet .video-wrapper {
-    display: none
+.hero-unit{
+    opacity: 0.83;
+    background-color: transparent
+}
+
+img{
+    opacity: 0;
 }
