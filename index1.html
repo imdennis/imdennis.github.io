@@ -32,13 +32,20 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <style type="text/css">
-        <!-- .style1 {
-            font-size: 16px
-        }
-        
-        -->
-    </style>
+    <style type="text/css"><!-- .style1 {font-size: 16px}--></style>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"-->
+    <script>
+        $(document).ready(function(){
+        $(".show_dennis").mouseover(function(){
+        $(".show_dennis").animate({
+            opacity: '0.8'
+        });;
+        });
+        $(".show_dennis").mouseout(function(){
+        $(".show_dennis").css("opacity", "0.08");
+        });
+        });
+    </script>
 </head>
 
 <body>
@@ -96,27 +103,26 @@
                     <h1>關於<br>
                     ，<br>
                     我</h1>
-                    <p>
-                        <img src="img/me.jpg" width="328" height="328"><br>
+                
+                        <img class="show_dennis" src="img/me.jpg" width="328" height="328"><br>
                         <br>
-                        <p>「當你累的時候，想想你為當初來到這裡的目的是什麼。」<br> 「Stay Hungry, Stay Foolish.」<br> 「任何事情半途而廢就是失敗！」
+                        <p>「當你累的時候，想想你為當初來到雲科的目的是什麼。」<br> 
+                            「Stay Hungry, Stay Foolish.」<br> 
+                            「任何事情半途而廢就是失敗。」
                         </p>
-                        <p>&nbsp;</p>
                 </div>
             </div>
         </div>
         <div class="row-fluid">
             <div class="span4">
-                <h2>
-				Certifications
-			</h2>
+                <h2>Certifications</h2>
                 <p class="style1">
-                    Associate, Java SE 7 Programmer<br><br>
+                    <h4>Associate, Java SE 7 Programmer</h4>
                     <b>certification authority followed by license number</b><br>
                     <a>  Oracle, License 243823971OCAJSE7</a><br>
-                    <b>certification dates</b><br>Starting February 2016
+                    <b>certification dates</b><br>
+                    <a>Starting February 2016</a>
                 </p>
-                <p>&nbsp;</p>
             </div>
             <div class="span4">
                 <h2>
@@ -134,7 +140,7 @@
     </div>
     <section>
         <div class="video-wrapper">
-            <video preload="none" autoplay muted loop src="video/me_2s.mp4">
+            <video preload="none" autoplay muted loop src="video/me_7s.mp4">
                     Video tag not supported.
                 </video>
         </div>
