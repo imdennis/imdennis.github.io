@@ -83,6 +83,16 @@
                 $("#low-row").hide();
                 $("#low-row2").hide();
             });
+            
+            $("#btm_more").click(function(){
+                $("#btm_home").removeClass("active"); 
+                $("#btm_more").addClass("active");
+                $(".more").hide(); 
+                $("section").hide();
+                $("#low-row").hide();
+                $("#low-row2").hide();
+            });
+            
         });
     </script>
 
