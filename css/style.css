@@ -42,3 +42,7 @@ body{
     overflow-x: hidden
 }
 
+.detail{
+    visibility: hidden
+}
+

@@ -49,10 +49,21 @@
     <script>
         $(document).ready(function(){
             $(".duration").mouseover(function(){
-                $(".duration").text("1 year 10 month")
+                $(".duration").text("(1 year 10 month)")
             });
             $(".duration").mouseout(function(){
                 $(".duration").text("2014 ~ Present")
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".license").mouseover(function(){
+                $(".detail").css("visibility","visible");
+                $(".detail").css("color","#604433");
+            });
+            $(".license").mouseout(function(){
+                $(".detail").css("color","#FFFFFF");
             });
         });
     </script>
@@ -134,9 +145,10 @@
                 
                 <p class="hero-unit">
                     <b>Associate, Java SE 7 Programmer<br></b> 
-                    <img class="oracle" src="img/oracle.png">Oracle, License<br>
-                    <a class="">243823971OCAJSE7<br></a>
-                    <a>Starting February 2016<br></a>
+                    <img class="oracle" src="img/oracle.png">
+                    <a class="license">Oracle, License<br></a>
+                    <a class="detail">243823971OCAJSE7<br>
+                       Starting February 2016</a>
                 </p>
             </div>
             <div class="span4">
