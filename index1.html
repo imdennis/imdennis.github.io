@@ -38,11 +38,11 @@
         $(document).ready(function(){
             $(".show_dennis").mouseover(function(){
                 $(".show_dennis").animate({
-                    opacity: '0.8'
+                    opacity: '0.08'
                 });;
             });
             $(".show_dennis").mouseout(function(){
-                $(".show_dennis").css("opacity", "0.08");
+                $(".show_dennis").css("opacity", "0.8");
                 });
         });
     </script>
@@ -63,10 +63,29 @@
                 $(".detail").css("color","#604433");
             });
             $(".license").mouseout(function(){
-                $(".detail").css("color","#FFFFFF");
+                $(".detail").css("color","#FFF");
             });
         });
     </script>
+    <script>
+        $(document).ready(function(){
+            $(".more").mouseover(function(){
+                $(".more").css("background-color","#EEE");
+            });
+            $(".more").mouseout(function(){
+                $(".more").css("background-color","#FFF");
+            });
+            $(".more").click(function(){
+                $("#btm_home").removeClass("active"); 
+                $("#btm_more").addClass("active");
+                $(".more").hide(); 
+                $("section").hide();
+                $("#low-row").hide();
+                $("#low-row2").hide();
+            });
+        });
+    </script>
+
 </head>
 
 <body oncontextmenu="return false">
@@ -76,48 +95,19 @@
                 <div class="navbar">
                     <div class="navbar-inner">
                         <div class="container-fluid">
-                            <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </a>
-                            <a href="index1.html#" class="brand">Dennis Cheng</a>
+                            <a href="index1.html" class="brand">Dennis Cheng</a>
                             <div class="nav-collapse navbar-responsive-collapse in collapse">
                                 <ul class="nav">
-                                    <li class="active">
+                                    <li id = "btm_home" class="active">
                                         <a href="index1.html#">Home</a>
                                     </li>
                                     <li>
-                                        <a href="index2.html">Works</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle" href="index1.html#">活動照片<strong class="caret"></strong></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="index3.html">烏克麗麗教學志工營</a>
-                                            </li>
-                                            <li>
-                                                <a href="index3.html">吉他社15校聯合迎新</a>
-                                            </li>
-                                            <li>
-                                                <a href="index3.html">琴人知己 雄工福誠吉他社</a>
-                                            </li>
-                                            <li class="divider">
-                                            </li>
-                                            <li class="nav-header">
-                                                好站連結
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/pages/%E9%9B%84%E5%B7%A5%E6%B0%91%E8%AC%A0%E5%90%89%E4%BB%96%E7%A4%BE/169181456487700">FB-雄工民謠吉他社</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/groups/500307110014357/">FB-高雄市烏克麗麗志工隊</a>
-                                            </li>
-                                        </ul>
+                                        <a id="btm_more" class="" href="index1.html#">More</a>
                                     </li>
                                 </ul>
                                 <ul class="nav pull-right">
-                                    <br>
+                                    Howl's Moving Castle
+                                    <audio src="music/life.mp3" controls autoplay loop class="life"></audio>
                                 </ul>
                             </div>
 
@@ -125,21 +115,25 @@
                     </div>
 
                 </div>
-                <div class="hero-unit">
-                    <h1>關於<br>
-                    ，<br>
-                    我</h1>
-                
-                        <img class="show_dennis" src="img/me.jpg" width="328" height="328"><br>
+                <div id="low-row" class="hero-unit">
+                    <h1>About<br>
+                    ,<br>
+                    me</h1>
+                    <div class="behind_me">
+                    
+                    <img class="show_dennis" src="img/me.jpg" width="328" height="328">
+                    
+                    </div>
+                    <br>
                         <br>
-                        <p>「當你累的時候，想想你為當初來到雲科的目的是什麼。」<br> 
+                        <p>「When you're tired, think why you're here.」<br> 
                             「Stay Hungry, Stay Foolish.」<br> 
-                            「任何事情半途而廢就是失敗。」
+                            「Just keep <s>swiming</s> going.」
                         </p>
                 </div>
             </div>
         </div>
-        <div class="row-fluid">
+        <div id="low-row2" class="row-fluid">
             <div class="span4">
                 <h2>Certifications</h2>
                 
@@ -154,9 +148,8 @@
             <div class="span4">
                 <h2>Experience</h2>
                 <p class="hero-unit">
-                    <b>Student<br></b> 
-                    National Yunlin University of Science and Technology<br> 
-                    <a class="duration">2014 ~ Present<br></a>
+                    <b>Student</b> <a class="duration">2014 ~ Present</a><br>
+                    National Yunlin University of Science and Technology<br>
                 </p>
             </div>
             <div class="span4">
@@ -167,6 +160,10 @@
                 </p>
             </div>
         </div>
+        <div class="more">
+            More
+        </div>
+        <span><br><br></span>
     </div>
     <section>
         <div class="video-wrapper">
