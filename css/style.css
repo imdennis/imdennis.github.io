@@ -1,5 +1,6 @@
 .video-wrapper,video {
 	position: absolute;
+    z-index: -1;
 	top: 0;
 	width: 100%;
 }
@@ -11,8 +12,8 @@
 }
 .navbar{
     position: fixed;
+    z-index: 999;
     width: 97%;
-    z-index: 999
 }
 
 video{
@@ -26,10 +27,14 @@ video{
 }
 
 section {
-    overflow: hidden
+    overflow: hidden;
 }
 .behind_me{
-    
+    width: 328px;
+    height: 328px;
+    z-index: -1;
+    position: absolute;
+    text-align: center
 }
 .hero-unit{
     opacity: 0.83;
@@ -47,7 +52,7 @@ section {
     font-size: 30px;
     background-color: transparent;
     margin: auto;
-    font-family: "";
+    font-family: inherit;
 }
 .show_dennis{
     opacity: 0.8;
@@ -55,6 +60,9 @@ section {
 }
 .oracle{
     border-radius: 30px;
+}
+.myheart{
+    text-align: center
 }
 body{
     overflow-y: scroll;
