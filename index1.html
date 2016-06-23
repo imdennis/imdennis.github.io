@@ -33,16 +33,27 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <style type="text/css"><!-- .style1 {font-size: 16px}--></style>
+
     <script>
         $(document).ready(function(){
-        $(".show_dennis").mouseover(function(){
-        $(".show_dennis").animate({
-            opacity: '0.8'
-        });;
+            $(".show_dennis").mouseover(function(){
+                $(".show_dennis").animate({
+                    opacity: '0.8'
+                });;
+            });
+            $(".show_dennis").mouseout(function(){
+                $(".show_dennis").css("opacity", "0.08");
+                });
         });
-        $(".show_dennis").mouseout(function(){
-        $(".show_dennis").css("opacity", "0.08");
-        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".duration").mouseover(function(){
+                $(".duration").text("1 year 10 month")
+            });
+            $(".duration").mouseout(function(){
+                $(".duration").val("2014 ~ Present")
+            });
         });
     </script>
 </head>
@@ -123,7 +134,8 @@
                 
                 <p class="hero-unit">
                     <b>Associate, Java SE 7 Programmer<br></b> 
-                    <img class="oracle" src="img/oracle.png">Oracle, License 243823971OCAJSE7<br>
+                    <img class="oracle" src="img/oracle.png">Oracle, License<br>
+                    <a class="">243823971OCAJSE7<br></a>
                     <a>Starting February 2016<br></a>
                 </p>
             </div>
@@ -132,7 +144,7 @@
                 <p class="hero-unit">
                     <b>Student<br></b> 
                     National Yunlin University of Science and Technology<br> 
-                    <a>2014 ~ Present (1 year 10 mounth)<br></a>
+                    <a class="duration">2014 ~ Present<br></a>
                 </p>
             </div>
             <div class="span4">
