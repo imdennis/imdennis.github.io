@@ -75,6 +75,12 @@
             $(".more").mouseout(function(){
                 $(".more").css("background-color","#FFF");
             });
+            $(".life").mouseover(function(){
+                $("sub").css("visibility","visible");
+            });
+            $(".life").mouseout(function(){
+                $("sub").css("visibility","hidden");
+            });
             $(".more").click(function(){
                 $("#btm_home").removeClass("active"); 
                 $("#btm_more").addClass("active");
@@ -82,6 +88,7 @@
                 $("section").hide();
                 $("#low-row").hide();
                 $("#low-row2").hide();
+                $("#low-more").css("visibility","visible");
             });
             
             $("#btm_more").click(function(){
@@ -91,13 +98,14 @@
                 $("section").hide();
                 $("#low-row").hide();
                 $("#low-row2").hide();
+                $("#low-more").css("visibility","visible");
             });
             
         });
     </script>
 </head>
-
-<body oncontextmenu="return false">
+<!--oncontextmenu="return false"-->
+<body>
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
@@ -108,15 +116,18 @@
                             <div class="nav-collapse navbar-responsive-collapse in collapse">
                                 <ul class="nav">
                                     <li id = "btm_home" class="active">
-                                        <a href="index1.html#">Home</a>
+                                        <a href="index.html#">Home</a>
                                     </li>
                                     <li>
-                                        <a id="btm_more" class="" href="index1.html#">More</a>
+                                        <a id="btm_more" class="" href="index.html#">More</a>
                                     </li>
                                 </ul>
+                                
                                 <ul class="nav pull-right">
-                                    Howl's Moving Castle
-                                    <audio src="music/life.mp3" controls autoplay loop class="life"></audio>
+                                    <sub class="hide-sub"> 
+                                        霍爾的移動城堡-人生的旋轉木馬
+                                    </sub>
+                                    <audio src="music/life.mp3" controls autoplay loop class="life">Howl's Moving Castle</audio>
                                 </ul>
                             </div>
 
@@ -148,7 +159,7 @@
             </div>
         </div>
         <div class="hero-unit"> 
-                        <br><br>
+                        <br><br><br><br>
                         <p class="myheart">「When you're tired, think why you're here.」<br> 
                             「Stay Hungry, Stay Foolish.」<br> 
                             「Just keep <s>swiming</s> going.」
@@ -164,6 +175,43 @@
                     <a class="license">Oracle, License<br></a>
                     <a class="detail">243823971OCAJSE7<br>
                        Starting February 2016</a>
+                </p>
+            </div>
+            <div class="span4">
+                <h2>Experience</h2>
+                <p class="hero-unit">
+                    <b>Student</b> <a class="duration">2014 ~ Present</a><br>
+                    National Yunlin University of Science and Technology<br>
+                </p>
+            </div>
+            <div class="span4">
+                <h2>Contact Info</h2>
+                <p class="hero-unit">
+                    E-mail: <a href="mailto:a79845@gmail.com">a79845@gmail.com</a><br> 
+                    Facebook: <a href="https://www.facebook.com/hi.admin">Dennis Cheng</a>
+                </p>
+            </div>
+        </div>
+        <div id="low-more" class="row-fluid">
+            <div class="span4">
+                <h2>Certifications</h2>
+                
+                <p class="hero-unit">
+                    <b>Associate, Java SE 7 Programmer<br></b> 
+                    <img class="oracle" src="img/oracle.png">
+                    <a class="license">Oracle, License<br></a>
+                    <br>
+                    <b>CPE程式能力檢定<br></b>
+                    <a>總共7題 答對4題<br></a>
+                    <br>
+                    <!-- 把高職 也補上去 多ee
+
+                        skill
+                        社團 吉他社 鋼琴社
+                        
+                        
+                    -->
+                    
                 </p>
             </div>
             <div class="span4">

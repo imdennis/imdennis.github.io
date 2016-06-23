@@ -13,9 +13,12 @@
 .navbar{
     position: fixed;
     z-index: 999;
-    width: 97%;
+    width:90%;
 }
 
+.span12{
+   
+}
 video{
     opacity: 0.6;
     height: auto;
@@ -24,17 +27,20 @@ video{
     left: 0;
     max-width: none;
     object-fit: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
 
 section {
     overflow: hidden;
 }
 .behind_me{
-    width: 328px;
-    height: 328px;
+    width: 342px;
     z-index: -1;
     position: absolute;
-    text-align: center
+    text-align: center;
+    font-size: 12%;
+    vertical-align:middle;
 }
 .hero-unit{
     opacity: 0.83;
@@ -73,6 +79,15 @@ body{
     visibility: hidden
 }
 
+#low-more{
+    visibility: hidden
+}
+
 .life{
     padding-top: 4px;
+}
+
+sub{
+    visibility: hidden;
+    color:grey;
 }
