@@ -38,5 +38,11 @@ img{
     opacity: 0.1;
     border-radius: 300px 
 }
-
+.oracle{
+    border-radius: 9px 
+}
+body{
+    overflow-y: scroll;
+    overflow-x: hidden
+}
 
