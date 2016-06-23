@@ -78,9 +78,16 @@ body{
 .detail{
     visibility: hidden
 }
-
+.toeic{
+    height: 60px;
+}
+.cpe{
+    height: 60px;
+}
 #low-more{
-    visibility: hidden
+    visibility: hidden;
+    position: absolute;
+    
 }
 
 .life{
