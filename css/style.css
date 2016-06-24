@@ -12,12 +12,12 @@
 }
 .navbar{
     position: fixed;
-    z-index: 999;
-    width:90%;
+    z-index: 1;
+    width:inherit;
 }
 
 .span12{
-   
+   width: 100%;
 }
 video{
     opacity: 0.6;
@@ -40,7 +40,7 @@ section {
     position: absolute;
     text-align: center;
     font-size: 12%;
-    vertical-align:middle;
+    vertical-align:middle
 }
 .hero-unit{
     opacity: 0.83;
@@ -55,9 +55,10 @@ section {
     border-style:solid;
     border-width: 1px;
     border-color:darkturquoise ;
-    font-size: 30px;
+    font-size:17px;
     background-color: transparent;
     margin: auto;
+    color: cornflowerblue;
     font-family: inherit;
 }
 .show_dennis{
