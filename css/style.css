@@ -60,6 +60,7 @@ section {
     margin: auto;
     color: cornflowerblue;
     font-family: inherit;
+    cursor: pointer
 }
 .show_dennis{
     opacity: 0.8;
@@ -97,9 +98,14 @@ body{
 
 sub{
     visibility: hidden;
-    color:grey;
+    color:grey
 }
 .youtuebe{
     padding-bottom: 40px;
     padding-left: 50px;
+}
+.hide-sub2{
+    text-align: center;
+    visibility: hidden;
+    color:cornflowerblue
 }
