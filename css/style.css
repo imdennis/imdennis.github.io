@@ -36,7 +36,7 @@ section {
 }
 .behind_me{
     width: 342px;
-    z-index: -1;
+    z-index: 0;
     position: absolute;
     text-align: center;
     font-size: 12%;
