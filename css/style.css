@@ -36,10 +36,10 @@ section {
 }
 .behind_me{
     width: 342px;
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     text-align: center;
-    font-size: 12%;
+    font-size: 14px;
     vertical-align:middle
 }
 .hero-unit{
