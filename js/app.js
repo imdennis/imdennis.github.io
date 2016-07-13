@@ -1,4 +1,3 @@
-EAAY88eoGFaUBACImkXZAfrRI7PUH18qr7zOUS2d6tvEpy8E3kjSmCbRmZAUYlIw4J3ouZCUJ41UsF9YOaD50BTHVc5h1lWLi8pDP1jfCOeyO8XbkWcZBCWa0DvWZC349QLuZAE6wZAX55uFWPOyuMr5ygcDMAZCzVWfIC8fwXW4KDwZDZD
 /*
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -58,7 +57,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN)) {
  */
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+      req.query['hub.verify_token'] === EAAY88eoGFaUBACImkXZAfrRI7PUH18qr7zOUS2d6tvEpy8E3kjSmCbRmZAUYlIw4J3ouZCUJ41UsF9YOaD50BTHVc5h1lWLi8pDP1jfCOeyO8XbkWcZBCWa0DvWZC349QLuZAE6wZAX55uFWPOyuMr5ygcDMAZCzVWfIC8fwXW4KDwZDZD) {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
