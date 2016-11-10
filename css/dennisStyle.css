@@ -1,0 +1,27 @@
+#space{
+    background:#AAA;
+    height:500px;
+    width:700px;
+    position: absolute;
+}
+
+#user{
+    background:#A55;
+    height:100px;
+    width:100px;
+    margin: 0;
+    left: 250px;
+    top:300px;
+    border-radius: 50%;
+    position: absolute;
+}
+#user2{
+    background:#5A5;
+    height:100px;
+    width:100px;
+    margin: 0;
+    left: 150px;
+    top:30px;
+    border-radius: 50%;
+    position: absolute;
+}
