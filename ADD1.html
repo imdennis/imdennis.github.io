@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <tiitle>B10317004_鄭兆為_ADD1</tiitle>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+<link href="css/dennisStyle.css" rel="stylesheet">
+<script>
+$(document).ready(function(){
+    $(document).ready(function() {
+        var $left=5,$top=5;
+        var $left_2=5,$top_2=5;
+
+        
+        function loop() {
+        var div = $("#user");
+        
+        var p = div.position();
+        if(p.left>600 || p.left<0){
+            $left = -$left;
+        }
+        if(p.top>400 || p.top<3){
+            $top = -$top;
+        }
+        div.animate(
+            {
+                left:'+='+$left,
+                top: '+='+$top
+            }, 1, 'linear', function() {
+            loop();
+        });
+        }
+        
+        function loop2() {
+        var div = $("#user2");
+        
+        var p = div.position();
+        if(p.left>600 || p.left<0){
+            $left_2 = -$left_2;
+        }
+        if(p.top>400 || p.top<3){
+            $top_2 = -$top_2;
+        }
+        div.animate(
+            {
+                left:'+='+$left_2,
+                top: '+='+$top_2
+            }, 1, 'linear', function() {
+            loop2();
+        });
+        }        
+        function loop3() {
+        var div = $("#user");
+        
+        var p = div.position();
+        if(p.left>600){
+            div.css({top: 400-p.top, left: 0});
+        }
+        if(p.left<0){
+            div.css({top: 400-p.top, left: 600});
+        }
+        if(p.top>400){
+            div.css({top: 0, left: 600-p.left});
+        }
+        if(p.top<3){
+            div.css({top: 400, left: 600-p.left});
+        }
+        div.animate(
+            {
+                left:'+='+$left,
+                top: '+='+$top
+            }, 1, 'linear', function() {
+            loop3();
+        });
+        }
+        function loop4() {
+        var div = $("#user2");
+        
+        var p = div.position();
+        if(p.left>600){
+            div.css({top: 400-p.top, left: 0});
+        }
+        if(p.left<0){
+            div.css({top: 400-p.top, left: 600});
+        }
+        if(p.top>400){
+            div.css({top: 0, left: 600-p.left});
+        }
+        if(p.top<3){
+            div.css({top: 400, left: 600-p.left});
+        }
+        div.animate(
+            {
+                left:'+='+$left_2,
+                top: '+='+$top_2
+            }, 1, 'linear', function() {
+            loop4();
+        });
+        }
+        function loop5() {
+        var div = $("#user");
+        
+            var $ds_left = Math.random()*600;
+            var $ds_top  = Math.random()*400;
+            div.animate(
+            {
+                left:$ds_left,
+                top: $ds_top
+            }, "slow", 'linear', function() {
+            loop5();
+        });
+        }
+        function loop6() {
+        var div = $("#user2");
+        
+                    var $ds_left = Math.random()*600;
+            var $ds_top  = Math.random()*400;
+            div.animate(
+            {
+                left:$ds_left,
+                top: $ds_top
+            }, "slow", 'linear', function() {
+            loop6();
+        });
+        }
+ 
+
+    $("#MR").click(function(){
+        $("#MR").attr("disabled", true);
+        $("#MW").attr("disabled", true);
+        $("#RP").attr("disabled", true);
+        loop();
+        loop2();
+    });
+    $("#MW").click(function(){
+        $("#MR").attr("disabled", true);
+        $("#MW").attr("disabled", true);
+        $("#RP").attr("disabled", true);
+        loop3();
+        loop4();
+    });
+    $("#RP").click(function(){
+        $("#MR").attr("disabled", true);
+        $("#MW").attr("disabled", true);
+        $("#RP").attr("disabled", true);
+        loop5();
+        loop6();
+    });
+    $("#NO").click(function(){
+        $("#MR").attr("disabled", false);
+        $("#MW").attr("disabled", false);
+        $("#RP").attr("disabled", false);
+        $("#user").stop();
+        $("#user2").stop();
+    });
+})});
+</script>
+</head>
+<body>
+    
+    <button id="MR">Mobility Reflection</button>
+    <button id="MW">Mobility Wrap</button>
+    <button id="RP">Mobility Random Way Point</button>
+    <button id="NO">Stop</button>
+    
+    <div id = "space">
+        <div id = "user"></div>
+        <div id = "user2"></div>
+    </div>
+
+
+
+</body>
+</html>
