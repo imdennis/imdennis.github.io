@@ -3,172 +3,202 @@
 <head>
     <title>B10317004_鄭兆為_ADD1</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+<link href="dennisStyle.css" rel="stylesheet">
 <link href="css/dennisStyle.css" rel="stylesheet">
 <script>
 $(document).ready(function(){
     $(document).ready(function() {
         var $left=5,$top=5;
         var $left_2=5,$top_2=5;
-
         
-        function loop() {
-        var div = $("#user");
+        //input
+        var duration=0;
+        var height=0;
+        var width=0;
+        var radius=0;
+        var nodes=0;
+        var mode=0;
+        //array
+        var array_left = [];
+        var array_top  = [];
+        var array_deg = [];
         
+        function loop(x) {
+        var div = $("#user"+x);
         var p = div.position();
-        if(p.left>600 || p.left<0){
-            $left = -$left;
-        }
-        if(p.top>400 || p.top<3){
-            $top = -$top;
-        }
-        div.animate(
-            {
-                left:'+='+$left,
-                top: '+='+$top
-            }, 1, 'linear', function() {
-            loop();
-        });
-        }
         
-        function loop2() {
-        var div = $("#user2");
-        
-        var p = div.position();
-        if(p.left>600 || p.left<0){
-            $left_2 = -$left_2;
-        }
-        if(p.top>400 || p.top<3){
-            $top_2 = -$top_2;
-        }
-        div.animate(
-            {
-                left:'+='+$left_2,
-                top: '+='+$top_2
-            }, 1, 'linear', function() {
-            loop2();
-        });
-        }        
-        function loop3() {
-        var div = $("#user");
-        
-        var p = div.position();
-        if(p.left>600){
-            div.css({top: 400-p.top, left: 0});
-        }
-        if(p.left<0){
-            div.css({top: 400-p.top, left: 600});
-        }
-        if(p.top>400){
-            div.css({top: 0, left: 600-p.left});
-        }
-        if(p.top<3){
-            div.css({top: 400, left: 600-p.left});
-        }
-        div.animate(
-            {
-                left:'+='+$left,
-                top: '+='+$top
-            }, 1, 'linear', function() {
-            loop3();
-        });
-        }
-        function loop4() {
-        var div = $("#user2");
-        
-        var p = div.position();
-        if(p.left>600){
-            div.css({top: 400-p.top, left: 0});
-        }
-        if(p.left<0){
-            div.css({top: 400-p.top, left: 600});
-        }
-        if(p.top>400){
-            div.css({top: 0, left: 600-p.left});
-        }
-        if(p.top<3){
-            div.css({top: 400, left: 600-p.left});
-        }
-        div.animate(
-            {
-                left:'+='+$left_2,
-                top: '+='+$top_2
-            }, 1, 'linear', function() {
-            loop4();
-        });
-        }
-        function loop5() {
-        var div = $("#user");
-        
-            var $ds_left = Math.random()*600;
-            var $ds_top  = Math.random()*400;
+            if(p.left>width-radius*2-6 || p.left<0){
+                array_left[x] = -array_left[x];
+                array_deg[x] = -array_deg[x];
+            }
+            if(p.top>height-radius*2-6 || p.top<0){
+                array_deg[x] = -array_deg[x];
+            }
+            
+            array_top[x] = array_deg[x]*array_left[x];
             div.animate(
             {
-                left:$ds_left,
-                top: $ds_top
-            }, "slow", 'linear', function() {
-            loop5();
+                left:'+='+array_left[x],
+                top: '+='+array_top[x]
+            }, 1, 'linear', function() {
+            loop(x);
         });
         }
-        function loop6() {
-        var div = $("#user2");
+              
+        function loop3(x) {
+        var div = $("#user"+x);
         
-                    var $ds_left = Math.random()*600;
-            var $ds_top  = Math.random()*400;
-            div.animate(
+        var p = div.position();
+        if(p.left>width-radius*2-6){
+            div.css({top: height-p.top-radius*2-6, left: 0});
+        }
+        if(p.left<0){
+            div.css({top: height-p.top-radius*2-6, left: width-radius*2-6});
+        }
+        if(p.top>height-radius*2-6){
+            div.css({top: 0, left: width-p.left-radius*2-6});
+        }
+        if(p.top<0){
+            div.css({top: height-radius*2-6, left: width-p.left-radius*2-6});
+        }
+        div.animate(
             {
-                left:$ds_left,
-                top: $ds_top
-            }, "slow", 'linear', function() {
-            loop6();
+                left:'+='+array_left[x],
+                top: '+='+array_top[x],
+            }, 1, 'linear', function() {
+            loop3(x);
         });
         }
  
+        
+        function loop6(x) {            
+        var div = $("#user"+x);
+            var $ds_left = Math.random()*(width-radius*2-6);
+            var $ds_top  = Math.random()*(height-radius*2-6);
+            div.animate(
+            {
+                left:$ds_left,
+                top: $ds_top
+            }, "slow", 'linear', function() {
+            loop6(x);
+        });
+        }
+        
+        function timer(){
+            var i;
+            for(i =0;i<nodes;i++){
+                $("#user"+i).stop();
+            }
+            $("#start").attr("disabled", false);
+            
+        }
+    
+    $("#start").click(function(){
+        //stop-before
+        var i;
+        for(i =0;i<nodes;i++){
+            $("#user"+i).stop();
+        }
+        
+        //update value
+        array_left=[];
+        array_top=[];
+        array_deg=[];
+        duration = $("#dur").val();
+        nodes = $("#nod").val();
+        radius = $("#rd").val();
+        radius-=3;
+        mode = $("#sel").prop("selectedIndex");
+        height = $("#hei").val();
+        width = $("#wid").val();
+        
+        $("#space").css({
+            height: height,
+            width: width
+        })
+        
+        $("#space").empty();
+        
+        for(i=0;i<nodes;i++){
+            if(Math.random()>0.5){
+                array_left.push(2);
+            }else{
+                array_left.push(-2);
+            }
+            if(Math.random()>0.5){
+                array_top.push(2);
+            }else{
+                array_top.push(-2);
+            }
+            var tan = Math.tan((Math.random()*11+5)/36*Math.PI);
+            if(Math.random()>0.5){
+                tan = -tan;
+            }
+            array_deg.push(tan);
+            $("#space").append("<div class='user' id='user"+i+"'></div>");
+            $("#user"+i).css({
+                top: Math.floor(Math.random()*(height-radius*2)), 
+                left: Math.floor(Math.random()*(width-radius*2)),
+                background: "#"+
+                Math.floor(Math.random()*16).toString(16)+
+                Math.floor(Math.random()*16).toString(16)+
+                Math.floor(Math.random()*16).toString(16),
+                height:radius*2,
+                width:radius*2
+                             });
 
-    $("#MR").click(function(){
-        $("#MR").attr("disabled", true);
-        $("#MW").attr("disabled", true);
-        $("#RP").attr("disabled", true);
-        loop();
-        loop2();
-    });
-    $("#MW").click(function(){
-        $("#MR").attr("disabled", true);
-        $("#MW").attr("disabled", true);
-        $("#RP").attr("disabled", true);
-        loop3();
-        loop4();
-    });
-    $("#RP").click(function(){
-        $("#MR").attr("disabled", true);
-        $("#MW").attr("disabled", true);
-        $("#RP").attr("disabled", true);
-        loop5();
-        loop6();
-    });
-    $("#NO").click(function(){
-        $("#MR").attr("disabled", false);
-        $("#MW").attr("disabled", false);
-        $("#RP").attr("disabled", false);
-        $("#user").stop();
-        $("#user2").stop();
+        }
+        
+        setTimeout(timer,duration*1000);
+        $("#start").val("SIMULATING...")
+        $("#start").attr("disabled", true);
+        
+        switch(mode){
+            case 0:
+                for(i=0;i<nodes;i++){
+                    loop(i);
+                }
+                break;
+            case 1:
+                for(i=0;i<nodes;i++){
+                    loop3(i);
+                }
+                break;
+            case 2:
+                for(i =0;i<nodes;i++){
+                    loop6(i);
+                }
+                break;
+            default:break;
+        }
     });
 })});
 </script>
 </head>
 <body>
-    <a>B10317004_鄭兆為_ADD1</a>
-    <button id="MR">Mobility Reflection</button>
-    <button id="MW">Mobility Wrap</button>
-    <button id="RP">Mobility Random Way Point</button>
-    <button id="NO">Stop</button>
-    
-    <div id = "space">
-        <div id = "user"></div>
-        <div id = "user2"></div>
+    <div id = "contain">
+        <a>Simulation Duration(s)</a>
+        <input type="number" id="dur" value='7'/><br>
+        <a>Network Height(dp)    </a>
+        <input type="number" id="hei" value='400'/><br>
+        <a>Network Width(dp)     </a>
+        <input type="number" id="wid" value='600'/><br>
+        <a>Radius(dp)            </a>
+        <input type="number" id="rd" value='20'/><br>
+        <a>Nodes                 </a>
+        <input type="number" id="nod" value='2'/><br>
+        <a>Mobility Model        </a>
+        <select id="sel">
+            <option value="MR">Mobility Reflection</option>
+            <option value="MW">Mobility Wrap</option>
+            <option value="RP">Mobility Random Way Point</option>
+        </select><br>
+        <button id ="start">START SIMULATION</button>
     </div>
+    
+    
+    <div id = "space"></div>
 
-
-
+        
 </body>
 </html>
