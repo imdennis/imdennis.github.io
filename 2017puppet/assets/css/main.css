@@ -1631,7 +1631,7 @@
 		}
 
 	#footer-wrapper {
-		background: #aa5f20 url("images/overlay.png"); 
+		background: #f39831 ;/*url("images/overlay.png"); */
 		color: #eee;
 		color: rgba(255, 255, 255, 0.5);
 	}
@@ -2026,8 +2026,8 @@
 			#nav {
 				position: absolute;
 				display: block;
-				/*top: 2.5em;*/
-                top: 0;
+				top: 0.4em;
+                
 				left: 0;
 				width: 100%;
 				text-align: center;
@@ -2038,7 +2038,7 @@
 					border-radius: 0.35em;
 					box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
 					padding: 0 1.5em 0 1.5em;
-                    background-color: #FFFFFF33;
+                    background-color: rgba(255,255,255,0.1);
 				}
 
 					#nav > ul > li {
@@ -2059,8 +2059,8 @@
 							text-decoration: none;
 							font-size: 0.8em;
 							letter-spacing: 0.25em;
-							height: 5em;
-							line-height: 5em;
+							height: 3em;
+							line-height: 3em;
 							-moz-transition: all .25s ease-in-out;
 							-webkit-transition: all .25s ease-in-out;
 							-o-transition: all .25s ease-in-out;
