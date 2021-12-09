@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>電費計算機</title>
+</head>
+
+<body>
+    <a>電費計算機</a>
+    <form>
+        <br>
+        <div class="form-group">
+            <label>帳單金額</label>
+            <input type="number" class="form-control" id="total_p" placeholder="總金額", min="1000">
+        </div>
+        <div class="form-group">
+            <label>帳單度數</label>
+            <input type="number" class="form-control" id="total_w" placeholder="總度數", min="100">
+        </div>
+        <div class="form-group">
+            <label>電表指數大的</label>
+            <input type="number" class="form-control" id="meter_1" placeholder="前四位數字", min="1">
+        </div>
+        <div class="form-group">
+            <label>電表指數小的</label>
+            <input type="number" class="form-control" id="meter_2" placeholder="前四位數字", min="1">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">室友人數</label>
+          <select class="form-control" id="share_p">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="input-group-prepend">
+            <span class="input-group-text">這次電費一個人</span>
+            <span id="per" class="input-group-text">0.00</span>
+            <span class="input-group-text">元</span>
+        </div>
+        <div class="input-group-prepend">
+            <span class="input-group-text">電費一度</span>
+            <span id="per_w" class="input-group-text">0.00</span>
+            <span class="input-group-text">元</span>
+        </div>
+        <div class="input-group-prepend">
+            <span class="input-group-text">這次用了</span>
+            <span id="use_w" class="input-group-text">0.00</span>
+            <span class="input-group-text">度</span>
+        </div>
+      </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on('change', function() {
+                var total_p = $('#total_p').val();
+                var total_w = $('#total_w').val();
+                var meter_1 = $('#meter_1').val();
+                var meter_2 = $('#meter_2').val();
+                var share_p = $('#share_p').val();
+                var per_w = total_p/total_w
+                var use_w = meter_1-meter_2
+                var per = (per_w * use_w)/share_p
+                $('#per').text(per);
+                $('#per_w').text(per_w);
+                $('#use_w').text(use_w);
+                
+            });
+            //$(document).change(function() { alert(1); });
+        });
+    </script>
+
+</html>
